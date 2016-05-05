@@ -1,6 +1,6 @@
 # Taiga
 
-#This is a fork of the original Taiga program to support features that I wish to be supported.
+#This is a fork of the original [Taiga](https://github.com/erengy/taiga) program to support features that I wish to be supported.
 
 Taiga is an open source, lightweight, anime tracker for Windows. It can automatically detect the episodes you're watching on your computer and synchronize your progress with online services such as [Hummingbird](http://hummingbird.me) and [MyAnimeList](http://myanimelist.net). It helps you manage your list, discover new series, share watched episodes and download new ones.
 
@@ -11,3 +11,5 @@ Changes:
  * KissAnime.to
 * Removed Auto-updater
 * Append unofficial to end of version
+
+#I TAKE NO CREDIT FOR THIS PROGRAM
