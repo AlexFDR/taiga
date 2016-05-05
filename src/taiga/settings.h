@@ -104,6 +104,7 @@ enum AppSettingName {
   kStream_Viz,
   kStream_Wakanim,
   kStream_Youtube,
+  kStream_KissAnime,
 
   // Sharing
   kShare_Http_Enabled,

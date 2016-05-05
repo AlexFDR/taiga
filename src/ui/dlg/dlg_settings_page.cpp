@@ -143,7 +143,7 @@ BOOL SettingsPage::OnInitDialog() {
       CheckDlgButton(IDC_CHECK_AUTOSTART, Settings.GetBool(taiga::kApp_Behavior_Autostart));
       CheckDlgButton(IDC_CHECK_GENERAL_CLOSE, Settings.GetBool(taiga::kApp_Behavior_CloseToTray));
       CheckDlgButton(IDC_CHECK_GENERAL_MINIMIZE, Settings.GetBool(taiga::kApp_Behavior_MinimizeToTray));
-      CheckDlgButton(IDC_CHECK_START_VERSION, Settings.GetBool(taiga::kApp_Behavior_CheckForUpdates));
+      //CheckDlgButton(IDC_CHECK_START_VERSION, Settings.GetBool(taiga::kApp_Behavior_CheckForUpdates));
       CheckDlgButton(IDC_CHECK_START_CHECKEPS, Settings.GetBool(taiga::kApp_Behavior_ScanAvailableEpisodes));
       CheckDlgButton(IDC_CHECK_START_MINIMIZE, Settings.GetBool(taiga::kApp_Behavior_StartMinimized));
       SetDlgItemText(IDC_EDIT_EXTERNALLINKS, Settings[taiga::kApp_Interface_ExternalLinks].c_str());
@@ -260,6 +260,7 @@ BOOL SettingsPage::OnInitDialog() {
       list.InsertItem(i++, 0, ui::kIcon16_AppBlue, 0, nullptr, L"Viz Anime", taiga::kStream_Viz);
       list.InsertItem(i++, 0, ui::kIcon16_AppBlue, 0, nullptr, L"Wakanim", taiga::kStream_Wakanim);
       list.InsertItem(i++, 0, ui::kIcon16_AppBlue, 0, nullptr, L"YouTube", taiga::kStream_Youtube);
+	  list.InsertItem(i++, 0, ui::kIcon16_AppBlue, 0, nullptr, L"KissAnime", taiga::kStream_KissAnime);
       for (int i = 0; i < list.GetItemCount(); ++i) {
         if (Settings.GetBool(static_cast<int>(list.GetItemParam(i))))
           list.SetCheckState(i, TRUE);
@@ -900,6 +901,7 @@ LRESULT SettingsPage::OnNotify(int idCtrl, LPNMHDR pnmh) {
           L"http://www.viz.com/anime/streaming",
           L"http://www.wakanim.tv",
           L"http://www.youtube.com",
+          L"http://www.kissanime.to",
         };
         if (lpnmitem->iItem > -1 && lpnmitem->iItem < static_cast<int>(links.size()))
           ExecuteLink(links.at(lpnmitem->iItem));

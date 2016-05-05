@@ -132,7 +132,7 @@ void AppSettings::InitializeMap() {
   INITKEY(kApp_List_SortOrder, L"1", L"program/list/sort/order");
   INITKEY(kApp_Behavior_Autostart, nullptr, L"program/general/autostart");
   INITKEY(kApp_Behavior_StartMinimized, nullptr, L"program/startup/minimize");
-  INITKEY(kApp_Behavior_CheckForUpdates, L"true", L"program/startup/checkversion");
+  INITKEY(kApp_Behavior_CheckForUpdates, L"false", L"program/startup/checkversion");
   INITKEY(kApp_Behavior_ScanAvailableEpisodes, nullptr, L"program/startup/checkeps");
   INITKEY(kApp_Behavior_CloseToTray, nullptr, L"program/general/close");
   INITKEY(kApp_Behavior_MinimizeToTray, nullptr, L"program/general/minimize");
@@ -171,6 +171,7 @@ void AppSettings::InitializeMap() {
   INITKEY(kStream_Viz, L"true", L"recognition/streaming/providers/viz");
   INITKEY(kStream_Wakanim, L"true", L"recognition/streaming/providers/wakanim");
   INITKEY(kStream_Youtube, L"true", L"recognition/streaming/providers/youtube");
+  INITKEY(kStream_KissAnime, L"true", L"recognition/streaming/providers/kissanime");
 
   // Sharing
   INITKEY(kShare_Http_Enabled, nullptr, L"announce/http/enabled");

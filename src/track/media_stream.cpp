@@ -36,6 +36,7 @@ enum StreamingVideoProvider {
   kStreamViz,
   kStreamWakanim,
   kStreamYoutube,
+  kStreamKissAnime,
   kStreamLast
 };
 
@@ -383,6 +384,8 @@ bool IsStreamSettingEnabled(StreamingVideoProvider stream_provider) {
       return Settings.GetBool(taiga::kStream_Wakanim);
     case kStreamYoutube:
       return Settings.GetBool(taiga::kStream_Youtube);
+	case kStreamKissAnime:
+		return Settings.GetBool(taiga::kStream_KissAnime);
   }
 
   return false;
@@ -412,6 +415,8 @@ bool MatchStreamUrl(StreamingVideoProvider stream_provider,
       return SearchRegex(url, L"wakanim\\.tv/video(-premium)?/[^/]+/");
     case kStreamYoutube:
       return InStr(url, L"youtube.com/watch") > -1;
+	case kStreamKissAnime:
+		return SearchRegex(url, L"kissanime.to/Anime/(.*)/Episode");
   }
 
   return false;
@@ -474,7 +479,12 @@ void CleanStreamTitle(StreamingVideoProvider stream_provider,
       EraseLeft(title, L"\u25B6 ");  // black right pointing triangle
       EraseRight(title, L" - YouTube");
       break;
-    // Some other website, or URL is not found
+    // KissAnime
+	case kStreamKissAnime:
+		//EraseRight(title, L"- (.*)", true);
+		title = title.substr(0, title.find_last_of('-', 0) - 1);
+		break;
+	// Some other website, or URL is not found
     default:
     case kStreamUnknown:
       title.clear();

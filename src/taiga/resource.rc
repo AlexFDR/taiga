@@ -323,8 +323,9 @@ FONT 9, "Segoe UI", 400, 0, 0
     GROUPBOX        "Startup", IDC_STATIC, 7, 7, 301, 59, 0, WS_EX_LEFT
     AUTOCHECKBOX    "Start automatically with Windows", IDC_CHECK_AUTOSTART, 12, 18, 118, 8, 0, WS_EX_LEFT
     AUTOCHECKBOX    "Start minimized", IDC_CHECK_START_MINIMIZE, 12, 29, 85, 8, 0, WS_EX_LEFT
-    AUTOCHECKBOX    "Check for application updates", IDC_CHECK_START_VERSION, 12, 40, 110, 8, 0, WS_EX_LEFT
-    AUTOCHECKBOX    "Scan library folders for available episodes", IDC_CHECK_START_CHECKEPS, 12, 51, 155, 8, 0, WS_EX_LEFT
+    //AUTOCHECKBOX    "Check for application updates", IDC_CHECK_START_VERSION, 12, 40, 110, 8, 0, WS_EX_LEFT
+    //AUTOCHECKBOX    "Scan library folders for available episodes", IDC_CHECK_START_CHECKEPS, 12, 51, 155, 8, 0, WS_EX_LEFT
+	AUTOCHECKBOX    "Scan library folders for available episodes", IDC_CHECK_START_VERSION, 12, 40, 110, 8, 0, WS_EX_LEFT
     GROUPBOX        "System tray use", IDC_STATIC, 7, 73, 301, 37, 0, WS_EX_LEFT
     AUTOCHECKBOX    "Close to tray", IDC_CHECK_GENERAL_CLOSE, 12, 84, 70, 8, 0, WS_EX_LEFT
     AUTOCHECKBOX    "Minimize to tray", IDC_CHECK_GENERAL_MINIMIZE, 12, 95, 85, 8, 0, WS_EX_LEFT
@@ -664,7 +665,7 @@ FONT 9, "Segoe UI", 400, 0, 162
 
 LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
 IDD_UPDATE DIALOGEX 0, 0, 228, 40
-STYLE DS_3DLOOK | DS_CENTER | DS_SHELLFONT | WS_CAPTION | WS_VISIBLE | WS_SYSMENU
+STYLE DS_3DLOOK | DS_CENTER | DS_SHELLFONT | WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_APPWINDOW
 CAPTION "Update"
 CLASS "TaigaUpdateW"

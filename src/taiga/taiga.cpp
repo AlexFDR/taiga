@@ -97,11 +97,13 @@ BOOL App::InitInstance() {
   ::Skype.Create();
   TaigaApi.Create();
 
-  if (Settings.GetBool(kApp_Behavior_CheckForUpdates)) {
+  /*if (Settings.GetBool(kApp_Behavior_CheckForUpdates)) {
     ui::ShowDialog(ui::kDialogUpdate);
   } else {
     ui::ShowDialog(ui::kDialogMain);
-  }
+  }*/
+	
+  ui::ShowDialog(ui::kDialogMain);
 
   return TRUE;
 }
